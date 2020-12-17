@@ -1,0 +1,23 @@
+version: "3.4"
+
+# docker run --rm -it -v (pwd):/data -p 8080:80 maptiler/tileserver-gl:v3.0.0 maptiler-osm-2017-07-03-v3.6.1-germany_berlin.mbtiles -c config.json
+
+services:
+  mapclient:
+    depends_on:
+      - tileserver
+    build:
+      context: ./map-client
+      dockerfile: Dockerfile
+    volumes:
+      - "/usr/app/node_modules"
+      - "./map-client:/usr/app"
+    ports:
+      - "3000:3000"
+  tileserver:
+    image: maptiler/tileserver-gl:v3.0.0
+    volumes:
+      - "./tileserver-gl:/data"
+    command: ["-p", "80", "-c", "/data/config.json"]
+    ports:
+      - "8080:80"

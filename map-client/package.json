@@ -1,0 +1,23 @@
+{
+  "name": "map-client",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "snowpack dev"
+  },
+  "keywords": [],
+  "author": "Fabian Morón Zirfas <fabianmoronzirfas@protonmail.ch> (https://fabianmoronzirfas.me)",
+  "license": "MIT",
+  "devDependencies": {
+    "@inpyjamas/scripts": "0.1.9-alpha",
+    "@snowpack/plugin-typescript": "1.1.1",
+    "@types/maplibre-gl": "1.13.0",
+    "snowpack": "2.18.4"
+  },
+  "dependencies": {
+    "@types/snowpack-env": "2.3.2",
+    "maplibre-gl": "1.13.0-rc.4"
+  }
+}
